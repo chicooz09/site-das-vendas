@@ -1,0 +1,464 @@
+nav {
+  font-family: "Roboto", sans-serif;
+  background: rgba(51, 51, 51, 0.7); /* transparente */
+  backdrop-filter: blur(10px);       /* efeito blur */
+  -webkit-backdrop-filter: blur(10px); /* suporte Safari */
+  
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+
+  position: fixed;  /* fixa no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1); /* linha sutil */
+}
+   /* Fica acima dos outros elementos */
+
+body {
+  margin: 0;
+  padding-top: 70px; /* altura da navbar */
+  background: #f4f4f4; /* fundo mais suave */
+  font-family: Arial, sans-serif;
+}
+
+/* Links da navbar */
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  font-family: Arial, sans-serif;
+  display: block;
+}
+
+/* Espaçamento entre links */
+nav a + a {
+  margin-left: 10px;
+}
+
+/* Formulário de pesquisa alinhado à direita */
+.search-form {
+  margin-left: auto; /* empurra o formulário para o lado direito */
+  display: flex;
+  align-items: center;
+}
+
+/* Input de pesquisa */
+.search-form input[type="text"] {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  font-size: 16px;
+}
+
+/* Botão de pesquisa */
+.search-form button {
+  padding: 6px 10px;
+  border: none;
+  background-color: #575757;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 3px 3px 0;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+  background-color: #777;
+}
+
+.dropdown {
+  position: relative;
+  margin-left: auto; /* empurra o menu para a direita */
+}
+
+.dropbtn {
+  background-color: #333;
+  color: white;
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.dropbtn:hover {
+  background-color: #575757;
+}
+
+/* Conteúdo do dropdown (escondido por padrão) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Links do dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover nos links do dropdown */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Mostrar dropdown ao passar mouse no botão */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    main {
+      padding: 20px;
+    }
+
+    .h2 {
+      font-family: "Roboto",sans-serif;
+      background:#777;
+    }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #ffffff;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 244px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+    
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      color: #ffffff;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 0px;
+      padding: 10px 10px;
+      background: #ffffff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      background: #555;
+    }
+
+    /* Layout principal: filtros + catálogo */
+.loja {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* filtros à esquerda */
+  gap: 20px;
+}
+
+/* Filtros */
+.filtros {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+.filtros h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  margin-top: 15px;
+  color: #333;
+}
+
+.filtros ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+.filtros li {
+  margin-bottom: 6px;
+}
+
+.filtros label {
+  font-size: 14px;
+  color: #444;
+  cursor: pointer;
+}
+
+.filtros input[type="checkbox"] {
+  margin-right: 6px;
+}
+/* ======== Página de Produto ======== */
+.produto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.produto-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+  font-family: "Roboto", sans-serif;
+}
+
+.produto-container img {
+  max-width: 380px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.produto-container img:hover {
+  transform: scale(1.05);
+}
+
+.produto-container p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #444;
+}
+
+.produto-container .preco {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1e88e5;
+  margin: 15px 0;
+}
+
+/* Botões */
+.produto-container .btn {
+  background: #1e88e5;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.produto-container .btn:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+}
+
+/* Link de voltar */
+.produto-container a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.produto-container a:hover {
+  text-decoration: underline;
+}
+/* ================== Carrinho ================== */
+.carrinho-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: "Roboto", sans-serif;
+}
+
+.carrinho-container h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #222;
+}
+
+/* Itens do carrinho */
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item-carrinho:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.item-carrinho img {
+  border-radius: 8px;
+  max-width: 70px;
+}
+
+.item-carrinho span {
+  flex: 1;
+  margin-left: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Botão remover */
+.item-carrinho button {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.item-carrinho button:hover {
+  background: #b71c1c;
+}
+
+/* Total */
+.carrinho-total {
+  text-align: right;
+  margin-top: 25px;
+}
+
+.carrinho-total h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #1e88e5;
+}
+
+.carrinho-total .finalizar {
+  background: #43a047;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.carrinho-total .finalizar:hover {
+  background: #2e7d32;
+}
+/* ================== Contato ================== */
+.contato-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: "Roboto", sans-serif;
+}
+
+.contato-container h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.contato-container p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contato-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.contato-form input,
+.contato-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  border-color: #1e88e5;
+  box-shadow: 0 0 6px rgba(30,136,229,0.4);
+  outline: none;
+}
+
+.contato-form button {
+  align-self: flex-start;
+  background: #1e88e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contato-form button:hover {
+  background: #1565c0;
+}
+
+.info-extra {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+
+.info-extra h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
